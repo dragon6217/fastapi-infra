@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-service
+spec:
+  # LoadBalancer 타입은 AWS EKS에서 실제로 외부 접속 가능한 공인 IP/DNS를 만들어줍니다.
+  type: LoadBalancer
+  selector:
+    # [중요] 아까 Deployment의 template.metadata.labels에 적은 것과 정확히 일치해야 합니다!
+    app: fastapi-app
+  ports:
+    - protocol: TCP
+      port: 80          # 서비스가 밖으로 노출하는 포트 (사용자가 접속할 포트)
+      targetPort: 8000  # 컨테이너 안에서 실제로 돌고 있는 포트 (FastAPI 포트)
