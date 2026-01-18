@@ -17,7 +17,7 @@ spec:
       containers:
       - name: fastapi-container
         # 중요: 우리가 이전에 빌드해서 Push한 그 이미지 주소입니다.
-        image: dragon6217/260118_fastapi-app:98e05cd55a85868fd27b78d53f0c9e2413a8700c
+        image: dragon6217/260118_fastapi-app:c7671ce9987c9c9068dd6f866e477a815183a28e
         ports:
         - containerPort: 8000
         # 서버가 뜰 때까지 기다려주는 시간이나 자원 제한 등을 나중에 추가할 수 있습니다.
