@@ -5,7 +5,7 @@ metadata:
   labels:
     app: fastapi-app
 spec:
-  replicas: 2 # 서버를 2대 띄워서 하나가 죽어도 서비스가 유지되게 합니다.
+  replicas: 3 # 서버를 2대 띄워서 하나가 죽어도 서비스가 유지되게 합니다.
   selector:
     matchLabels:
       app: fastapi-app
